@@ -1,0 +1,19 @@
+{
+    "action": 4,
+    "ai": 5,
+    "children": 6,
+    "comedy": 7,
+    "crime": 8,
+    "drama": 9,
+    "fantasy": 10,
+    "historical": 11,
+    "horror": 12,
+    "nonfiction": 13,
+    "other": 14,
+    "realism": 15,
+    "romance": 16,
+    "science_fiction": 17,
+    "speculative": 18,
+    "thriller": 19,
+    "young_adult": 20
+}

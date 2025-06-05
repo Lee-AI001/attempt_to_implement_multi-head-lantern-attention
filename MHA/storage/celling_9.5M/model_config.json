@@ -1,0 +1,61 @@
+{
+    "project_settings": {
+        "base_dir": "E:\\AI\\Model\\Transformer\\Storytelling",
+        "project_name": "celling_9.5M",
+        "data_files": [
+            "E:\\AI\\Model\\Transformer\\Storytelling\\data\\plot\\storytelling_pre.jsonl"
+        ],
+        "project_dir": "E:\\AI\\Model\\Transformer\\Storytelling\\Lantern.ai_v7_luma2\\storage\\celling_9.5M"
+    },
+    "model_architecture": {
+        "model_class": "StoryTellerTransformer",
+        "vocab_size": 10000,
+        "num_layers": 4,
+        "d_model": 352,
+        "nhead": 16,
+        "dropout": 0.125,
+        "embed_dropout": 0.03,
+        "dim_feedforward": 1408,
+        "num_genres": 17,
+        "embedding_layer": "nn.Embedding(10000, 352)",
+        "output_layer": "nn.Linear(352, 10000)",
+        "decoder_layers": "4 layers of DecoderLayer(d_model=352, nhead=16, dim_feedforward=1408, dropout=0.125)",
+        "normalization": "nn.LayerNorm(d_model)"
+    },
+    "chunking_tokenization": {
+        "max_len": 512,
+        "padding_value": 0,
+        "sliding_step": 256,
+        "max_chunks": 64
+    },
+    "training_hyperparameters": {
+        "learning_rate": 0.0001,
+        "weight_decay": 0.03,
+        "batch_size": 32,
+        "start_epoch": 16,
+        "epochs": 32,
+        "max_grad_norm": 1.0,
+        "patience": 16,
+        "use_optimizer": "lion",
+        "scheduler_type": "cosine",
+        "warmup_epochs": 3,
+        "label_smoothing": 0.05,
+        "grad_accum_steps": 1,
+        "test_size": 0,
+        "rouge_sample_size": 10,
+        "mixed_precision": "fp16",
+        "plateau_factor": 0.5,
+        "plateau_patience": 5,
+        "use_optuna": false,
+        "optuna_n_trials": 16
+    },
+    "generation_hyperparameters": {
+        "split_ratio": 0.98,
+        "max_gen_len": 256,
+        "temperature": 1.2,
+        "pad_idx": 0,
+        "eos_idx": 3,
+        "save_dis": 2
+    },
+    "device": "cuda"
+}
